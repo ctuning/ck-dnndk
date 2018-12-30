@@ -156,7 +156,7 @@ V1.9.6.1
 
 ## Installing CK-DNNDK
 ```bash
-user@host$ ck pull repo:ck-dnndk
+root@zcu102# ck pull repo:ck-dnndk
 ```
 
 ## Installing the ImageNet validation set (50,000 images ~ 6.5 GB)
