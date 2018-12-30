@@ -25,7 +25,7 @@
   "compiler_env": "CK_CXX", 
   "compiler_flags_as_env": "$<<CK_COMPILER_FLAG_CPP11>>$ -O2 -Wall -Wpointer-arith -ffast-math -mcpu=cortex-a53", 
   "data_name": "image-classification-inception_v1-deephi", 
-  "extra_ld_vars": "$<<CK_DEEPHI_PROGRAM_ELF_DIR>>$/dpu_inception_v1_0.elf $<<CK_DEEPHI_PROGRAM_ELF_DIR>>$/dpu_inception_v1_2.elf -lhineon -ln2cube -ldputils -lopencv_imgcodecs $<<CK_ENV_LIB_OPENCV_LFLAG_HIGHGUI>>$",
+  "extra_ld_vars": "$<<CK_DEEPHI_PROGRAM_ELF_DIR>>$/dpu_inception_v1_0.elf $<<CK_DEEPHI_PROGRAM_ELF_DIR>>$/dpu_inception_v1_2.elf -lhineon -ln2cube -ldputils $<<CK_ENV_LIB_OPENCV_LFLAG_IMGCODECS>>$ $<<CK_ENV_LIB_OPENCV_LFLAG_HIGHGUI>>$",
   "linker_add_lib_as_env": [
     "CK_CXX_EXTRA", 
     "CK_ENV_LIB_STDCPP_STATIC"
