@@ -1,0 +1,5 @@
+*.pyc
+*.elf
+deploy.caffemodel
+deploy.prototxt
+tmp/

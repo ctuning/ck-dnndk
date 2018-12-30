@@ -1,0 +1,21 @@
+{
+  "backup_data_uid": "9f0934c406ebef16",
+  "backup_module_uid": "84e27ad9dd12e734",
+  "backup_module_uoa": "script",
+  "control": {
+    "author": "Anton Lokhmotov",
+    "author_email": "anton@dividiti.com",
+    "author_webpage": "http://dividiti.com",
+    "copyright": "See CK COPYRIGHT.txt for copyright details",
+    "engine": "CK",
+    "iso_datetime": "2018-08-21T08:48:12.327465",
+    "license": "See CK LICENSE.txt for licensing details",
+    "version": [
+      "1",
+      "9",
+      "5",
+      "1"
+    ]
+  },
+  "data_name": "download-deephimodel"
+}

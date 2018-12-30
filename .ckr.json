@@ -1,0 +1,15 @@
+{
+  "data_uoa": "ck-dnndk", 
+  "data_name": "ck-dnndk", 
+  "dict": {
+    "url": "http://github.com/ctuning/ck-dnndk", 
+    "shared": "git", 
+    "repo_deps": [
+      {
+        "repo_uoa": "ck-autotuning"
+      }
+    ]
+  }, 
+  "data_alias": "ck-dnndk", 
+  "data_uid": "d03f001de4248a2a"
+}
