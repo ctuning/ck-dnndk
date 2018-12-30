@@ -50,13 +50,9 @@ Please also feel free to read this [Getting Started](https://github.com/ctuning/
 
 
 ## Installing CK-DNNDK
-Install the CK-DNNDK repository from e.g. `~/Downloads/ck-dnndk.zip`:
+Install the CK-DNNDK repository:
 ```bash
-user@host$ ck add repo --zip=~/Downloads/ck-dnndk.zip
-```
-**NB:** When the CK-DNNDK repo is public, install simply as follows:
-```bash
-user@host$ ck add repo:ck-dnndk
+user@host$ ck pull repo:ck-dnndk
 ```
 
 ## Installing DeePhi DNNDK
