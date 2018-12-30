@@ -7,7 +7,7 @@
     "install_env": {
       "CK_DNNDK_ARCHIVE": "YES", 
       "CK_DNNDK_ARCHIVE_PATH": "",
-      "CK_DNNDK_DPU_VER": "1.3.7",
+      "CK_DNNDK_DPU_VER": "1.3.0",
       "CMAKE_CONFIG": "Release", 
       "PACKAGE_BUILD_TYPE": "make", 
       "PACKAGE_CONFIGURE_FLAGS": "", 
