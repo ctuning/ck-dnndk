@@ -200,7 +200,7 @@ using prebuilt DPU binaries provided in the DNNDK package as follows:
 root@zcu102# ck compile program:image-classification-resnet50-deephi
 root@zcu102# ck run program:image-classification-resnet50-deephi --cmd_key=default
 ...
-Execution time: 23.421 sec.
+Execution time: 19.050 sec.
 ```
 
 - Inception-v1:
@@ -208,7 +208,7 @@ Execution time: 23.421 sec.
 root@zcu102# ck compile program:image-classification-inception_v1-deephi
 root@zcu102# ck run program:image-classification-inception_v1-deephi --cmd_key=default
 ...
-Execution time: 16.353 sec.
+Execution time: 13.725 sec.
 ```
 
 # Converting DNNDK models
