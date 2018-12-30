@@ -8,7 +8,12 @@ with a portable workflow and reusable components.
 
 # License
 
-The code in this repository is licensed under the [Collective Knowledge license](LICENSE.CK) (3-clause BSD), except the `main.cc` and `Makefile` files under `program/` licensed under the [DNNDK license](LICENSE.DNNDK).
+The files in this repository are licensed under [the CK license](LICENSE.CK)
+(3-clause BSD), except the `main.cc` and `Makefile` files under `program/`
+licensed under [the DNNDK license](LICENSE.DNNDK) (included with a written
+permission from [Xilinx](http://xilinx.com) / [DeePhi Tech,
+Inc.](http://deephi.com), as part of collaboration between
+[Xilinx](http://xilinx.com) and [dividiti](http://dividiti.com)).
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
