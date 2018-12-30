@@ -147,14 +147,16 @@ export PATH=$CK_ROOT/bin:$PATH
 export CK_TOOLS=$HOME/CK_TOOLS
 export CK_REPOS=$HOME/CK_REPOS
 ```
+- Test CK:
+```bash
+root@zcu102# source /root/.bashrc
+root@zcu102# ck version
+V1.9.6.1
+```
 
 ## Installing CK-DNNDK
 ```bash
-root@zcu102# ck add repo --zip=/root/ck-dnndk.zip
-```
-**NB:** When the CK-DNNDK repo is public, install simply as follows:
-```bash
-user@host$ ck add repo:ck-dnndk
+user@host$ ck pull repo:ck-dnndk
 ```
 
 ## Installing the ImageNet validation set (50,000 images ~ 6.5 GB)
