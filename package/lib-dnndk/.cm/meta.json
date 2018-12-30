@@ -7,7 +7,7 @@
     "install_env": {
       "CK_DNNDK_ARCHIVE": "YES", 
       "CK_DNNDK_ARCHIVE_PATH": "",
-      "CK_DNNDK_DPU_VER": "1.3.1",
+      "CK_DNNDK_DPU_VER": "1.3.7",
       "CMAKE_CONFIG": "Release", 
       "PACKAGE_BUILD_TYPE": "make", 
       "PACKAGE_CONFIGURE_FLAGS": "", 
@@ -20,8 +20,8 @@
       "PACKAGE_SUB_DIR": "src", 
       "PACKAGE_SUB_DIR1": "install"
     }, 
-    "no_ver_in_suggested_path": "yes", 
-    "version": "2.x"
+    "no_ver_in_suggested_path": "no", 
+    "version": "2."
   }, 
   "deps": {
     "compiler-cuda": {
