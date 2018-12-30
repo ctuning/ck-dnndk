@@ -125,11 +125,6 @@ More than one package found:
 user@host$ ck virtual env --tags=lib,dnndk,v2
 user@host$ scp -P 22 -r $CK_ENV_LIB_DNNDK/../ZCU102/samples root@192.168.0.102:/root
 ```
-- Copy the CK-DNNDK archive onto the board e.g.:
-```bash
-user@host$ scp -P 22 ~/Downloads/ck-dnndk.zip root@192.168.0.102:/root
-```
-**NB:** This step will not be required when the CK-DNNDK repo is public.
 
 - Log in to the board e.g.:
 ```bash
