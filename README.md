@@ -19,7 +19,7 @@ Inc.](http://deephi.com), as part of collaboration between
 
 # Setting up the host machine (Ubuntu workstation with CUDA)
 
-## Installing Collective Knowledge
+## Installing CK
 
 CK minimally requires:
 
@@ -120,10 +120,10 @@ More than one package found:
 
 # Setting up the ZCU102 board
 
-- Copy DNNDK samples and images onto the board e.g.:
+- Copy DNNDK headers, drivers, samples and images onto the board e.g.:
 ```bash
 user@host$ ck virtual env --tags=lib,dnndk,v2
-user@host$ scp -P 22 -r $CK_ENV_LIB_DNNDK/../ZCU102/samples root@192.168.0.102:/root
+user@host$ scp -P 22 -r $CK_ENV_LIB_DNNDK/../ZCU102/* root@192.168.0.102:/root
 ```
 
 - Log in to the board e.g.:
@@ -133,8 +133,29 @@ user@host$ ssh -p 22 root@192.168.0.102
 
 **NB:** Depending on your board image, you may need to install `gcc`, `git` and other common utilities via `apt` before proceeding to the next step.
 
-## Installing Collective Knowledge
+## Installing DNNDK
+```bash
+root@zcu102# cd /root && ./install.sh
+Begin to install DeePhi DNNDK ...
+Install DeePhi DPU Driver ...
+Install DeePhi tools, runtime & libraries ...
+Complete installation successfully.
+The BOOT.BIN and system.dtb have been replaced.
+The system will reboot after 5 seconds ...
+5
+4
+3
+2
+1
+user@host$
+```
 
+## Installing CK
+
+- Log in to the board e.g.:
+```bash
+user@host$ ssh -p 22 root@192.168.0.102
+```
 - Install CK from GitHub:
 ```bash
 root@zcu102# git clone https://github.com/ctuning/ck /root/CK
