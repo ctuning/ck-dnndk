@@ -84,7 +84,7 @@
     "channel-stable"
   ], 
   "use_scripts_from_another_entry": {
-    "data_uoa": "download-caffemodel-deephi", 
+    "data_uoa": "download-deephimodel", 
     "module_uoa": "script", 
     "repo_uoa": "ck-deephi"
   }
