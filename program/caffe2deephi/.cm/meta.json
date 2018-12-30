@@ -102,7 +102,6 @@
     "CK_DECENT_LOG_FILE": "decent.log",
     "CK_DNNC_OUTPUT_DIR": "dnnc_out",
     "CK_DNNC_LOG_FILE": "dnnc.log",
-    "CK_ARCHIVE_NAME": "dnnc_net.zip",
     "CK_IMAGENET_RESOLUTION": 256,
     "CK_BOARD_ADDRESS": "192.168.0.102",
     "CK_BOARD_PORT": 22,
