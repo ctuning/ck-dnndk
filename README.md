@@ -88,11 +88,11 @@ as much as possible.
 
 ### Installing DNNDK
 Download a DNNDK archive from [DeePhi](http://www.deephi.com/technology/dnndk),
-save it to e.g. `~/Downloads/deephi_dnndk_v2.07_beta.tar.gz`, and run:
+save it to e.g. `~/Downloads/deephi_dnndk_v2.08_beta.tar.gz`, and run:
 
 ```bash
-user@host$ ck install package --tags=lib,dnndk \
---env.CK_DNNDK_ARCHIVE_PATH=~/Downloads/deephi_dnndk_v2.07_beta.tar.gz
+user@host$ ck install package --tags=lib,dnndk --extra_version=08 \
+--env.CK_DNNDK_ARCHIVE_PATH=~/Downloads/deephi_dnndk_v2.08_beta.tar.gz
 ```
 
 CK will detect your environment (Ubuntu 14.04 or 16.04; CUDA 8.0, 9.0, 9.1) and offer to install the compatible DNNDK package.
