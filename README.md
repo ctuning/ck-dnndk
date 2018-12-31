@@ -247,7 +247,7 @@ The log files are located under the directory given with the command:
 user@host$ ck find program:caffe2deephi
 ```
 - `tmp/stdout.log`: standard output of the last executed command;
-- `tmp/stdout.log`: standard error of the last executed command;
+- `tmp/stderr.log`: standard error of the last executed command;
 - `tmp/decent_out/decent.log`: log from the DECENT converter;
 - `tmp/dnnc_out/dnnc.log`: log from the DNNC converted (contains a copy of a log from DECENT).
 
