@@ -279,19 +279,19 @@ To measure accuracy on the ImageNet validation set (50,000 images), run:
 - ResNet50:
 ```bash
 root@zcu102# ck benchmark program:image-classification-resnet50-deephi \
---cmd_key=imagenet --env.CK_DEEPHI_PROGRAM_ELF_DIR=../elf \
---record --record_repo=local --record_uoa=resnet50 \
---tags=image-classification,deephi,resnet50,zcu102 \
---repetitions=1 --skip_stat_analysis
+--cmd_key=imagenet --repetitions=1 --env.CK_DEEPHI_PROGRAM_ELF_DIR=../elf \
+--record --record_repo=local --record_uoa=dnndk-v2.08-resnet50 \
+--tags=image-classification,deephi,zcu102,dnndk-v2.08,resnet50 \
+--skip_print_timers --skip_stat_analysis --process_multi_keys
 ```
 
 - Inception-v1:
 ```bash
 root@zcu102# ck benchmark program:image-classification-inception_v1-deephi \
---cmd_key=imagenet --env.CK_DEEPHI_PROGRAM_ELF_DIR=../elf \
---record --record_repo=local --record_uoa=inception_v1 \
---tags=image-classification,deephi,inception_v1,zcu102 \
---repetitions=1 --skip_stat_analysis
+--cmd_key=imagenet --repetitions=1 --env.CK_DEEPHI_PROGRAM_ELF_DIR=../elf \
+--record --record_repo=local --record_uoa=dnndk-v2.08-inception_v1 \
+--tags=image-classification,deephi,zcu102,dnndk-v2.08,inception_v1 \
+--skip_print_timers --skip_stat_analysis --process_multi_keys
 ```
 
 ## Archiving the experimental results on the board
