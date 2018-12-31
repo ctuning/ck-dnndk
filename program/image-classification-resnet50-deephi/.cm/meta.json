@@ -33,8 +33,7 @@
   ],
   "main_language": "cpp",
   "print_files_after_run": [
-    "stderr.log",
-    "stdout.log"
+    "stderr.log"
   ],
   "process_in_tmp": "yes",
   "program": "yes",
