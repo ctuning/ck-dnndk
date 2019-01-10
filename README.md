@@ -297,8 +297,8 @@ root@zcu102# ck benchmark program:image-classification-inception_v1-deephi \
 ## Archiving the experimental results on the board
 ```
 root@zcu102# ck list local:experiment:*
-inception_v1
-resnet50
+dnndk-v2.08-inception_v1
+dnndk-v2.08-resnet50
 root@zcu102# ck zip local:experiment:* --archive_name=/root/ck-dnndk-xilinx-zcu102.zip
 ```
 ## Copying the experimental results to the host
