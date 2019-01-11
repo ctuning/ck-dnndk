@@ -184,9 +184,9 @@ root@zcu102# ck pull repo:ck-dnndk
 ```bash
 root@zcu102# ck install package:imagenet-2012-val
 ```
-**NB:** For testing the workflows, you can also install a subset of images from this dataset (the first 500 images ~ 64 MB):
+**NB:** For testing the workflows, you can also install a subset of images from this dataset (the first 500 images resized to `224x224`, ~19 MB):
 ```bash
-root@zcu102# ck install package:imagenet-2012-val-min
+root@zcu102# ck install package:imagenet-2012-val-min-resized
 ```
 
 ## Testing the models with prebuilt DPU binaries
