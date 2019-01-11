@@ -43,9 +43,16 @@ def ck_postprocess(i):
 
     d={}
     d['frame_predictions'] = []
+    d['batch_performance_fps'] = []
+    d['batch_duration_us'] = []
     d['debug']=rt['params'].get('debug','no')
 
     # Collect deps of interest.
+    imagenet_val=deps.get('dataset-imagenet-val',{})
+    imagenet_val_dict=imagenet_val.get('dict',{})
+    imagenet_val_dict_env=imagenet_val_dict.get('env',{})
+    d['CK_CAFFE_IMAGENET_VAL']=imagenet_val_dict_env.get('CK_CAFFE_IMAGENET_VAL','')
+
     imagenet_aux=deps.get('dataset-imagenet-aux',{})
     imagenet_aux_dict=imagenet_aux.get('dict',{})
     imagenet_aux_dict_env=imagenet_aux_dict.get('env',{})
@@ -70,7 +77,8 @@ def ck_postprocess(i):
         lst+=r['lst']
 
     # Match e.g. 'Load image : ILSVRC2012_val_00000001.JPEG'.
-    load_image_regex = 'Load image : (?P<file_name>.*)'
+    image_regex = '((Load\s+image)|(Image\s+[n|N]ame))\s*:\s*' + \
+         '(?P<file_name>.*)'
 
     # Match e.g. 'WALLCLOCK INT8->FP32 Execution time: 18020us'.
     time_regex = \
@@ -92,12 +100,22 @@ def ck_postprocess(i):
         'prob = (?P<prob>\d*\.?\d*)\s+' + \
         'name = (?P<name>.*)'
 
+    # Match metrics from template e.g.
+    # BATCH Duration: 1316318 us
+    # BATCH Performance: 379.847 FPS
+    duration_regex = \
+        '(?P<batch_or_total>(BATCH|TOTAL))\s+Duration\s*:\s+' + \
+        '(?P<duration>\d*)\s*us'
+    fps_regex = \
+        '(?P<batch_or_total>(BATCH|TOTAL))\s+Performance\s*:\s+' + \
+        '(?P<fps>\d*\.?\d*)\s*FPS'
+
     # Current frame prediction.
     frame_prediction = {}
 
     for line in lst:
-        match = re.search(load_image_regex, line)
-        # Start next frame frame.
+        match = re.search(image_regex, line)
+        # Start next frame.
         if match:
             # Append info for previous frame.
             if frame_prediction: d['frame_predictions'].append(frame_prediction)
@@ -130,6 +148,24 @@ def ck_postprocess(i):
             prediction['name'] = match.group('name')
             prediction['class'] = synset_list.index(prediction['name'])
             frame_prediction['prediction'].append(prediction)
+
+        match = re.search(duration_regex, line)
+        if match:
+            duration = int(match.group('duration'))
+            batch_or_total = match.group('batch_or_total')
+            if batch_or_total=='BATCH':
+                d['batch_duration_us'].append(duration)
+            elif batch_or_total=='TOTAL':
+                d['total_duration_us'] = duration
+
+        match = re.search(fps_regex, line)
+        if match:
+            fps = float(match.group('fps'))
+            batch_or_total = match.group('batch_or_total')
+            if batch_or_total=='BATCH':
+                d['batch_performance_fps'].append(fps)
+            elif batch_or_total=='TOTAL':
+                d['total_performance_fps'] = fps
 
     # Append the last collected frame prediction.
     d['frame_predictions'].append(frame_prediction)
@@ -182,6 +218,9 @@ def ck_postprocess(i):
         d['average_compute_time_us'] = int(compute_time_us * scaling)
         d['average_total_time_us'] = int(total_time_us * scaling)
         d['execution_time'] = total_time_us * scaling * 1e-6
+        # For template, output total duration in seconds.
+        if d['execution_time']==0: d['execution_time'] = d['total_duration_us'] * 1e-6
+
         # Remove frame predictions for non-debug output.
         if d['debug']=='no':
             del d['frame_predictions']
