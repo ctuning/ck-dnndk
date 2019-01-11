@@ -10,7 +10,7 @@
     "default": {
       "ignore_return_code": "no",
       "run_time": {
-        "run_cmd_main": "cd $<<CK_DEEPHI_PROGRAM_DIR>>$ && make && $<<CK_DEEPHI_PROGRAM_FILE>>$",
+        "run_cmd_main": "cd $<<CK_DEEPHI_PROGRAM_DIR>>$; make; ./$<<CK_DEEPHI_PROGRAM_FILE>>$ $<<CK_DEEPHI_PROGRAM_NUM_THREADS>>$",
         "run_cmd_out1": "stdout.log",
         "run_cmd_out2": "stderr.log",
         "run_output_files": [
@@ -30,7 +30,7 @@
           "python $#ck_take_from_{script:249d7b5e6b5b89f9}#$postprocess.py"
         ],
         "post_process_via_ck": "yes",
-        "run_cmd_main": "cd $<<CK_DEEPHI_PROGRAM_DIR>>$ && make && $<<CK_DEEPHI_PROGRAM_FILE>>$",
+        "run_cmd_main": "TMP_DIR=$PWD; cd $<<CK_DEEPHI_PROGRAM_DIR>>$; make; cd $TMP_DIR; $<<CK_DEEPHI_PROGRAM_DIR>>$/$<<CK_DEEPHI_PROGRAM_FILE>>$ $<<CK_DEEPHI_PROGRAM_NUM_THREADS>>$",
         "run_cmd_out1": "stdout.log",
         "run_cmd_out2": "stderr.log",
         "run_output_files": [
@@ -65,7 +65,8 @@
   },
   "run_vars": {
     "CK_DEEPHI_PROGRAM_DIR": "/root/samples/inception_v1/",
-    "CK_DEEPHI_PROGRAM_FILE": "inception_v1"
+    "CK_DEEPHI_PROGRAM_FILE": "inception_v1",
+    "CK_DEEPHI_PROGRAM_NUM_THREADS": 8
   },
   "tags": [
     "deephi",
