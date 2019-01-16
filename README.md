@@ -184,9 +184,25 @@ root@zcu102# ck pull repo:ck-dnndk
 ```bash
 root@zcu102# ck install package:imagenet-2012-val
 ```
-**NB:** For testing the workflows, you can also install a subset of images from this dataset (the first 500 images resized to `224x224`, ~19 MB):
+**NB:** For testing the workflows, you can also install a subset of images from this dataset (the first 500 images, ~64 MB):
 ```bash
-root@zcu102# ck install package:imagenet-2012-val-min-resized
+root@zcu102# ck install package:imagenet-2012-val-min
+```
+
+### Resizing the dataset to `224x224`
+
+As the ImageNet images come in all shapes in sizes, they need to be resized to the input of resolution of `224x224`. As resizing images at runtime (online) may affect performance, you can resize images ahead of time (offline) as follows:
+```
+root@zcu102# ck show env --tags=imagenet,val
+Env UID:         Target OS: Bits: Name:                         Version: Tags:
+
+5354ee8e40829858   linux-64    64 ImageNet dataset (validation) 2012     64bits,caffe,channel-stable,dataset,host-os-linux-64,ilsvrc2012,ilsvrc2012min,imagenet,raw,small_dataset,target-os-linux-64,v2012,val
+
+root@zcu102# ck load env:5354ee8e40829858 --tags=imagenet,val | grep full_path
+      "full_path": "/root/CK_TOOLS/dataset-imagenet-ilsvrc2012-val-min/ILSVRC2012_val_00000001.JPEG",
+
+root@zcu102# find /root/CK_TOOLS/dataset-imagenet-ilsvrc2012-val-min -name *.JPEG \
+-exec convert -resize 224x224! -interpolate bilinear {} \;
 ```
 
 ## Testing the models with prebuilt DPU binaries
