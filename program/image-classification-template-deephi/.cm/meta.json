@@ -1,6 +1,8 @@
 {
   "backup_data_uid": "3241089fd1a95a66",
   "data_name": "image-classification-template-deephi",
+  "no_compile": "yes",
+  "no_target_file": "yes",
   "print_files_after_run": [
     "stderr.log"
   ],
@@ -73,7 +75,5 @@
     "image-classification",
     "template",
     "lang-cpp"
-  ],
-  "no_compile": "yes",
-  "no_target_file": "yes"
+  ]
 }

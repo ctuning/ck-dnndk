@@ -1,16 +1,16 @@
 {
-  "backup_data_uid": "5964624a4ab19418", 
-  "backup_module_uid": "1dc07ee0f4742028", 
-  "backup_module_uoa": "package", 
+  "backup_data_uid": "5964624a4ab19418",
+  "backup_module_uid": "1dc07ee0f4742028",
+  "backup_module_uoa": "package",
   "control": {
-    "engine": "CK", 
-    "iso_datetime": "2018-08-22T08:04:33.543337", 
+    "engine": "CK",
+    "iso_datetime": "2018-08-22T08:04:33.543337",
     "version": [
-      "1", 
-      "9", 
-      "5", 
+      "1",
+      "9",
+      "5",
       "1"
     ]
-  }, 
+  },
   "data_name": "deephi-images"
 }
