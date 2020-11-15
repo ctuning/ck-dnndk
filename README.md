@@ -1,5 +1,7 @@
 # CK-DNNDK
 
+**All CK components for AI and ML are now collected in [one repository](https://github.com/ctuning/ai)!**
+
 A [Collective Knowledge](https://github.com/ctuning/ck) (CK) repository for
 [DeePhi](http://www.deephi.com/)'s [DNNDK](http://www.deephi.com/dnndk.html)
 with a portable workflow and reusable components.
